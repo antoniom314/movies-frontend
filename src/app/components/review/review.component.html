@@ -1,0 +1,53 @@
+<div>
+
+  <div  *ngIf="!showSearch" id="navBar">
+    <div class="container">
+      <div class="col-md-10 offset-md-1 d-flex justify-content-center">
+
+        <div id="navRow" class="row w-100 d-flex align-items-baseline">
+
+          <h5 class="mt-2 pl-2 mr-auto" [routerLink]="['/']">Movie Place</h5>
+
+          <button class="btn" id="navButton" (click)="showSearchBar()">
+            <i class="fa fa-search" style="font-size:16px"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <app-search *ngIf="showSearch" (hideSearchBar)="hideSearchBar()"></app-search>
+
+  <div class="container">
+    <div class="col-md-10 offset-md-1 ">
+
+      <div class=" d-flex justify-content-center">
+        <h2 class="my-4">I watched a movie last night</h2>
+      </div>
+
+      <!-- List is review items -->
+      <div *ngFor="let review of reviews">
+
+        <!-- Review result item from backend -->
+        <div id="review-item" class="mb-4 d-flex">
+
+          <div class="col px-4 d-flex flex-column">
+            <p class="mt-4" id="review-text">{{ review.text }}</p>
+            <div class="mt-auto">
+              <h5>{{ review.title }}</h5>
+              <div class="d-flex">
+                <p class="mt-0 mr-3">{{ review.date | date: 'yyyy' }}</p>
+                <p class="mt-0">{{ review.genre }}</p>
+              </div>
+            </div>
+          </div>
+
+          <img id="review-image" src="{{ baseImageUrl + review.imagePath }}" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

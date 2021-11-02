@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-8 offset-md-2">
+    <div class="mt-4 p-4" id="login-form">
+
+      <form>
+        <div class="form-group">
+          <label for="userInput">Email address</label>
+          <input class="form-control" id="userInput" [(ngModel)]="user"
+              value="user" name="userInput" type="text">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <input class="form-control" id="passwordInput" [(ngModel)]="password"
+              value="user" name="passwordInput" type="password" aria-describedby="errorMessage">
+              <small *ngIf="loginError" id="errorMessage" class="text-muted">
+                {{ loginError }}
+            </small>
+        </div>
+        <button id="button" class="btn btn-info" (click)="submitForm()" type="button">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>

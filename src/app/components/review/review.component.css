@@ -1,0 +1,36 @@
+#navBar {
+  background-color: rgba(23, 162, 184, 1);
+  height: 2.6em;
+}
+#navRow {
+  width: 80%;
+}
+#navButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+#search-result-content {
+  height: 11em;
+}
+#searchBar {
+  width: 90%;
+}
+#searchInput {
+  width: 64%;
+}
+#review-item {
+  height: 14em;
+  font-size: small;
+  background-color: rgba(31, 103, 112, 0.116);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  overflow-y: hidden;
+}
+
+#review-text {
+  font-size: small;
+  overflow-y: hidden;
+}
+
+#review-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}

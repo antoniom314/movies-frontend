@@ -1,0 +1,22 @@
+<div style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif, Cochin, Georgia, Times, 'Times New Roman', serif;">
+
+
+  <!-- <div class="col-md-10 offset-md-1">
+    <nav id="navbar" class="navbar d-flex justify-content-end">
+      <button type="button" [routerLink]="['/']" class="btn btn-info btn-sm  mr-2">Home</button>
+      <button type="button" [routerLink]="['/review']" class="btn btn-info btn-sm  mr-2">Review</button>
+      <button  type="button" [routerLink]="['/search']" class="btn btn-info btn-sm  mr-2">Search</button>
+      <button  type="button" [routerLink]="['/details/49026']" class="btn btn-info btn-sm  mr-2">Details</button>
+      <button  type="button" [routerLink]="['/admin']" class="btn btn-info btn-sm  mr-2">Admin</button>
+    </nav>
+  </div> -->
+
+  <div *ngIf="!isOnline" style="height: 500px;"
+   class="d-flex justify-content-center  align-items-center">
+    <h3 >No internet connection</h3>
+  </div>
+
+  <!-- <app-login></app-login> -->
+  <router-outlet *ngIf="isOnline"></router-outlet>
+
+</div>

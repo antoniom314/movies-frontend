@@ -1,0 +1,62 @@
+<div>
+
+  <div id="navBar">
+    <div class="container ">
+      <div class=" col-md-10 offset-md-1 d-flex justify-content-center">
+
+        <div id="navRow" class=" row w-100 d-flex align-items-baseline">
+
+          <button class="btn mx-2 p-0" id="navButton" (click)="goBack()">
+            <i class="fa fa-chevron-left" style="font-size:16px"></i>
+          </button>
+
+          <h5 class="mt-2 pl-2 mr-auto" [routerLink]="['/']">Movie Place</h5>
+          <button class="btn" id="navButton" (click)="goSearch()">
+            <i class="fa fa-search" style="font-size:16px"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-10 offset-md-1 p-0 mt-4 " *ngIf="movieDetails">
+
+      <div class="mx-3" id="details-item">
+        <div class="d-flex align-items-center">
+          <h4 class="mx-3 my-2 py-1">{{ movieDetails.title }} </h4>
+          <button style="color: black;"  class="btn btn-info btn-sm ml-auto mr-4 px-4"
+           (click)="openAddRecommendation()" type="button">Recommend</button>
+        </div>
+        <div class="d-flex flex-column">
+          <img class="img-fluid" src="{{ baseImageUrl + movieDetails.poster_path}}" />
+          <div class="px-3 py-1 mt-2 d-flex flex-column ">
+            <p class="mt-1">{{getGenreDetails(movieDetails.genres)}}</p>
+            <div class="d-flex flex-row">
+              <div class="d-flex flex-row">
+                <p class="mr-2">Rating</p>
+                <p class="mr-5">{{ movieDetails.vote_average}}</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="mr-2">{{ movieDetails.status }}</p>
+                <p>{{ movieDetails.release_date | date: 'd/M/yyyy' }}</p>
+              </div>
+            </div>
+            <p>{{ movieDetails.overview }}</p>
+            <div class="d-flex flex-row">
+              <div *ngFor="let language of movieDetails.spoken_languages">
+                <p class="pr-4">{{ language.english_name }}</p>
+              </div>
+              <div *ngFor="let country of movieDetails.production_countries">
+                <p class="px-1">{{ country.name }}</p>
+              </div>
+            </div>
+          </div>
+          <img class="w-100" src="{{ baseImageUrl + movieDetails.backdrop_path}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

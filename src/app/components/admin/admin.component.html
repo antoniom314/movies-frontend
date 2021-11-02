@@ -1,0 +1,90 @@
+<div>
+
+  <div id="navBar">
+    <div class="container">
+      <div class="col-md-10 offset-md-1 d-flex justify-content-center">
+
+        <div id="navRow" class="row w-100 d-flex align-items-baseline">
+
+          <h5 class="mt-2 pl-2 mr-auto" [routerLink]="['/']">Movie Place</h5>
+          <button class="btn" id="navButton" (click)="goSearch()">
+            <i class="fa fa-search" style="font-size:16px"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-10 offset-md-1 ">
+      <h2 class="my-4 d-flex justify-content-center">Admin</h2>
+
+      <!-- List is review items -->
+      <div *ngIf="showReviews">
+        <div *ngFor="let review of reviews">
+
+          <!-- Review result item from backend -->
+          <div id="review-item" class="mb-4 d-flex flex-row" (click)="selectItem(review.id)">
+            <div class="col px-4 d-flex flex-column">
+              <p class="mt-4" id="review-text">{{review.text}}</p>
+              <div class="mt-auto">
+                <h5>{{ review.title }}</h5>
+                <div class="d-flex">
+                  <p class="mt-0 mr-3">{{ review.date | date: 'yyyy'  }}</p>
+                  <p class="mt-0">{{ review.genre }}</p>
+                </div>
+              </div>
+            </div>
+
+            <img id="review-image" src="{{ baseImageUrl + review.imagePath}}" />
+          </div>
+
+        </div>
+
+
+        <br>
+      </div>
+
+      <div *ngIf="showLogin" class="mt-4 p-4" id="login-form">
+        <form>
+          <div class="form-group">
+            <label for="userInput">Email address</label>
+            <input class="form-control" id="userInput" [(ngModel)]="user" value="user" name="userInput" type="text">
+          </div>
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input class="form-control" id="passwordInput" [(ngModel)]="password" value="user" name="passwordInput" type="password" aria-describedby="errorMessage">
+            <small *ngIf="loginError" id="errorMessage" class="text-muted">
+              {{ loginError }}
+            </small>
+          </div>
+          <button id="button" class="btn btn-primary" (click)="submitForm()" type="button">Submit</button>
+        </form>
+      </div>
+
+      <div *ngIf="showDetail" class="mt-4 d-flex flex-column justify-content-center ">
+
+        <div id="review-item" class="d-flex">
+          <div class="col p-4 d-flex flex-column ">
+            <textarea maxlength="254" class="w-100 h-100" [(ngModel)]="reviewDetails.text" id="text-area" autofocus spellcheck="false">
+          </textarea>
+            <div class="pt-2 px-2">
+              <h5>{{ reviewDetails.title }}</h5>
+              <div class="d-flex">
+                <p class="m-0 mr-4">{{ reviewDetails.date }}</p>
+                <p class="m-0">{{ reviewDetails.genre }}</p>
+              </div>
+            </div>
+          </div>
+          <img class="img-fluid" src="{{ baseImageUrl + reviewDetails.imagePath}}" />
+        </div>
+
+        <div class="d-flex justify-content-start align-items-center">
+          <button id="button" class="btn btn-info btn-sm px-4 mx-2 my-2" (click)="editReview()" type="button">Edit</button>
+          <button id="button" class="btn btn-info btn-sm px-3 mx-2 my-2" (click)="deleteReview()" type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

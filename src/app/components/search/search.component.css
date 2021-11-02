@@ -1,0 +1,70 @@
+#navBar {
+  background-color: rgba(23, 162, 184, 1);
+  height: 2.6em;
+}
+#searchBar {
+  width: 90%;
+}
+#searchInput {
+  width: 64%;
+  height: 28px;
+}
+#navButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+#searchParent {
+  position: relative;
+}
+#searchList {
+  position: absolute;
+  top: 2.1em;
+  left: 2.4em;
+  z-index: 1;
+  border: 2px solid rgb(23, 162, 184);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+#searchRow {
+  font-size: small;
+  background-color: rgb(216, 224, 220);
+  transition: 0.3s;
+  overflow-y: hidden;
+}
+#searchRow:hover {
+  background-color: rgb(23, 162, 184);
+
+}
+#searchRowContent {
+  height: 4em;
+  border-top: 1px solid rgb(23, 162, 184);
+}
+#title {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+#genres {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+#search-result {
+  font-size: small;
+  background-color: rgba(31, 103, 112, 0.116);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  overflow-y: hidden;
+}
+#search-result:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#search-result-content {
+  height: 11em;
+}
+

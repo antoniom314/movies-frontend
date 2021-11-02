@@ -1,0 +1,43 @@
+#navBar {
+  height: 2.6em;
+  background-color: rgba(23, 162, 184, 1);
+}
+#navRow {
+  width: 80%;
+}
+#navButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+#review-item {
+  height: 16em;
+  font-size: small;
+  background-color: rgba(31, 103, 112, 0.116);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  overflow-y: hidden;
+}
+#review-text {
+  font-size: small;
+  overflow-y: hidden;
+}
+#review-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#button{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ }
+ #text-area {
+  resize: none;
+  border-color: rgba(0, 0, 0, 0.2);
+  outline-color: rgba(0, 0, 0, 0.205);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+#login-form {
+  background-color: rgba(31, 103, 112, 0.116);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#login-form:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
