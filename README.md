@@ -1,6 +1,7 @@
-# Frontend
+# Movies
+Recommend movies to watch or create poster and share it. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+Browse movies from TMDB API and recommend movies to watch or create poster using editor. (Share on Facebook in next version)
 
 ## Development server
 

@@ -8,6 +8,9 @@
 #navButton {
   background-color: rgba(0, 0, 0, 0);
 }
+.details-button {
+  width: 9em;
+}
 #details-item {
   font-size: small;
   background-color: rgba(31, 103, 112, 0.116);
@@ -18,4 +21,9 @@
 #details-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
+@media screen and (max-width: 992px) {
+  .details-button-group {
+    width: 11em;
+    /* background-color: black; */
+  }
+}

@@ -16,9 +16,8 @@ export class DetailsComponent implements OnInit {
   // Movie TMDB id to send to AddReviewComponent
   public movieIdTMDB: string;
   private searchString: string;
-  public baseImageUrl = 'https://image.tmdb.org/t/p/w342';
-
   public genresString: string;
+  public baseImageUrl = 'https://image.tmdb.org/t/p/w780';
 
   constructor(
     private detailsService: DetailsService,
@@ -90,5 +89,10 @@ export class DetailsComponent implements OnInit {
       },
     };
     this.router.navigate(['/add-review'], navigationExtras);
+  }
+
+  public createPoster() {
+    const url = 'http://localhost:4301/?image_url=' + this.baseImageUrl + this.movieDetails.poster_path;
+    window.open(url); // , '_blank'
   }
 }

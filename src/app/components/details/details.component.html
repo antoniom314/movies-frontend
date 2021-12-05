@@ -26,8 +26,13 @@
       <div class="mx-3" id="details-item">
         <div class="d-flex align-items-center">
           <h4 class="mx-3 my-2 py-1">{{ movieDetails.title }} </h4>
-          <button style="color: black;"  class="btn btn-info btn-sm ml-auto mr-4 px-4"
-           (click)="openAddRecommendation()" type="button">Recommend</button>
+
+          <div class="details-button-group p-1 ml-auto ">
+            <button style="color: black;"  class="details-button btn btn-info btn-sm m-1 ml-auto"
+            (click)="createPoster()" type="button">Create Poster</button>
+            <button style="color: black;"  class="details-button btn btn-info btn-sm m-1 ml-auto"
+            (click)="openAddRecommendation()" type="button">Recommend</button>
+          </div>
         </div>
         <div class="d-flex flex-column">
           <img class="img-fluid" src="{{ baseImageUrl + movieDetails.poster_path}}" />

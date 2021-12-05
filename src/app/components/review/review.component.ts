@@ -13,7 +13,6 @@ export class ReviewComponent implements OnInit {
 
   public reviews: Review[];
   public searchString = '';
-  public baseImageUrl = 'https://image.tmdb.org/t/p/w300';
 
   public showSearch = false;
 
